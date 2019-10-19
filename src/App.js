@@ -2,13 +2,18 @@ import React, { Component } from "react";
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import asyncComponent from './hoc/asyncComponent/asyncComponent';
 import Layout from "./hoc/Layout/Layout";
 import { OnRouteValidate } from './shared/utility';
-import appLogo from './assets/appLogo.svg';
 import './App.css';
 import HomePage from "./containers/HomePage/HomePage";
+import PostListing from "./containers/PostListing/PostListing";
+import CategoryList from "./containers/CategoryList/CategoryList";
+import TypeList from "./containers/TypeList/TypeList";
+import PostDetails from "./containers/PostDetails/PostDetails";
+import PageDetail from "./containers/PageDetail/PageDetail";
+import TypeDetail from "./containers/TypeDetail/TypeDetail";
 import Docs from "./containers/Documentation/Documentation";
+
 
 
 
@@ -53,6 +58,16 @@ class App extends Component {
     let routes = (
       <Switch>
         <Route path="/" exact component={HomePage} />
+        <Route path="/:slug" exact component={PageDetail} />
+        <Route path="/post/:slug" exact component={PostDetails} />
+        <Route path="/article/:type/:slug" exact component={TypeDetail} />
+        <Route path="/allposts" exact component={PostListing} />
+        <Route path="/allposts/page/:page" exact component={PostListing} />
+        <Route path="/category/:slug" exact component={CategoryList} />
+        <Route path="/category/:slug/page/:page" exact component={CategoryList} />
+        <Route path="/list/:slug" exact component={TypeList} />
+        <Route path="/list/:slug/page/:page" exact component={TypeList} /> 
+        
         <Route path="/docs" exact component={Docs} />
         <Redirect to="/" />
       </Switch>
