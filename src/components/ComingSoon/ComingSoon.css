@@ -1,0 +1,59 @@
+.img {
+  max-width: 248px;
+}
+
+.ImgDiv {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
+}
+
+.backImg {
+  padding-left: 0px !important;
+  text-align: left !important;
+  width: 30px !important;
+}
+
+.title {
+  color: #45a5e0;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 1.21052631578947;
+}
+
+.text {
+  color: #666666;
+  font-size: 95%;
+}
+
+.des_titlebar {
+  font-size: 18px !important;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 5px !important;
+  padding: 15px 0 !important;
+}
+
+.FlexPage {
+  width: 100%;
+  min-height: calc(100vh);
+  background-color: #ffffff;
+}
+
+.FlexFull {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 140px);
+  min-height: 460px;
+}
+
+.FlexCenter {
+  width: 90%;
+  padding: 5px 25px;
+}

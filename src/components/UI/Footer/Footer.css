@@ -1,0 +1,44 @@
+.SpaceAround {
+  justify-content: space-around
+}
+.imgw70 {
+  width: 70px
+}
+.FigText {
+  text-align: center;
+  font-size: 20px;
+  color: #7088a0;
+}
+.ContainerFooter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.FooterHm {
+  border-top: 1px solid #ccc;
+  height: 120px;
+  padding: 10px 10px;
+}
+.FooterIcons{
+  display: flex;
+  position: relative;
+}
+.BgColorWhite{
+  background-color: #fff
+}
+
+@media only screen and (max-width: 600px) { 
+  .FooterHm {
+    border-top: 1px solid #ccc;
+    height: 55px;
+    padding: 5px 5px;
+  }
+  .FigText {
+    text-align: center;
+    font-size: 9px;
+    color: #7088a0;
+  }
+  .imgw70 {
+    width: 30px;
+}
+}

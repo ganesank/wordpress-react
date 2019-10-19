@@ -1,0 +1,187 @@
+.b800 {
+  font-weight: 800
+}
+
+.bgcolor-ef{
+  background-color: #efefef
+}
+.color-ef{
+  color: #efefef
+}
+.b600 {
+  font-weight: 600
+}
+.f-1-5rm{
+  font-size: 1.5rem;
+}
+.cus-f12-f18 {
+  font-size: 18px
+}
+.wrap-word {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.color-ff {
+  color: #007bff
+}
+.color78 {
+  color: #797878
+}
+.color-84 {
+  color: #7e8184
+}
+.img-crop {
+  border-radius: 100%;
+}
+.w-25 {
+  width: 25%
+}
+.w-85 {
+  width: 85%
+}
+.pt-10 {
+  padding-top: 10px
+}
+.pt-15{
+  padding-top:15px;
+}
+.pb-15{
+  padding-bottom: 15px
+}
+.f14 {
+  font-size: 14px
+}
+.m-auto {
+  margin: auto
+}
+.mt-30 {
+  margin-top: 30px
+}
+.text-center {
+  text-align: center
+}
+.f13{
+  font-size: 13px
+}
+.ht-140 {
+  height: 140px
+}
+.img-margin-10 {
+  margin: 10px 0
+}
+.bg-color-b4{
+  background-color: #ffc0cb4a
+}
+.cr-div-rv {
+  width: 450px;
+  height: 262px!important;
+  margin: 0px 15px;
+  border: 1px solid #ccc;
+}
+.m-0 {
+  margin: 0
+}
+.p-0 {
+  padding: 0
+}
+.pl-0{
+  padding-left: 0px
+}
+.pr-0{
+  padding-right: 0px
+}
+.cus-container{
+  position: relative;
+  padding-bottom: 45px;
+  padding-top: 30px;
+}
+.os-div-content {
+  width: 30rem;
+  height: 20rem !important;
+  margin: 0px 8px;
+  border: 1px solid #9fa1a2;
+}
+.bdr-rds-5{
+  border-radius: 5px
+}
+.bg-color-white{
+  background-color: #fff
+}
+.cr-div {
+  width: 35rem;
+   height: 15rem !important;
+  margin: 0px 5px;
+}
+@media only screen and (max-width: 600px) {
+  .cus-f12-f18 {
+      font-size: 12px
+  }
+  .cr-div {
+      width: 18rem;
+      height: 9rem !important;
+      margin: 0px 5px;
+  }
+  .os-div-content {
+      width: 15rem;
+      height:11rem !important;
+      margin: 0px 5px;
+  }
+  .cr-div-rv {
+      width: 286px;
+      height: 164px !important;
+      margin: 0px 8px;
+      border: 1px solid #ccc;
+  }
+}
+.color-cc{
+  color:#ccc
+}
+.hm-f11-mq {
+  font-size: 11px;
+
+}
+
+.hm-w-80-mq {
+  width: 80px;
+  height: 80px;
+}
+
+.hm-f12-mq {
+  font-size: 12px
+}
+
+.hm-pb-10 {
+  padding-bottom: 10px
+}
+
+.hmp20mq {
+  padding: 20px
+}
+
+@media only screen and (min-width: 600px) {
+  .hm-f11-mq {
+      font-size: 25px;
+  }
+  .hm-p-20-mq {
+      padding: 30px
+  }
+  .ht-140 {
+      height: 280px;
+  }
+  .hm-w-80-mq {
+      width: 165px;
+     
+  height: 165px;
+  }
+  .hm-f12-mq {
+      font-size: 28px;
+  }
+}
+
+.mt15 {
+  margin-top: 25px;
+}
+
+
+
