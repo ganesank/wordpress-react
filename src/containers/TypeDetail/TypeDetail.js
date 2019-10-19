@@ -1,6 +1,5 @@
 // Account Details Container
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import React, { Component } from 'react';
 import * as actions from '../../store/actions';
 import css from './TypeDetail.css';
@@ -9,7 +8,6 @@ import axios from '../../shared/axiosInstanceWpress';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import Aux from '../../hoc/Auxiliary/Auxiliary';
-import PostTitle from '../../components/Post/Title/Title';
 import PostBgrTitle from '../../components/Post/BgrTitle/BgrTitle';
 import PostContent from '../../components/Post/Content/Content';
 import PostList from '../../components/Typelist/PostList/PostList';
@@ -31,16 +29,14 @@ class TypeDetail extends Component {
   componentDidMount() {
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     const { slug, type } = this.props.match.params;
-    this.state.slug = slug;
-    this.props.onFetchPdpData(type, slug);
+    this.props.onFetchPdpData(type || '', slug || '');
     this.checkAndLoadContent();
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.match.params.slug !== this.props.match.params.slug) {
       const { slug, type } = nextProps.match.params;
-      this.state.slug = slug;
       this.state.showSubContent = false;
-      this.props.onFetchPdpData(type, slug);
+      this.props.onFetchPdpData(type || '', slug || '');
       this.checkAndLoadContent();
     }
   }

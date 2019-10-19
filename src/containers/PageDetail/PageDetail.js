@@ -1,6 +1,5 @@
 // Account Details Container
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import React, { Component } from 'react';
 import queryString from 'query-string';
 import * as actions from '../../store/actions';
@@ -10,7 +9,6 @@ import axios from '../../shared/axiosInstanceWpress';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import Aux from '../../hoc/Auxiliary/Auxiliary';
-import PostTitle from '../../components/Post/Title/Title';
 import PostBgrTitle from '../../components/Post/BgrTitle/BgrTitle';
 import PostContent from '../../components/Post/Content/Content';
 import PostList from '../../components/Typelist/PostList/PostList';
@@ -33,18 +31,15 @@ class PageDetail extends Component {
     const queryParamsObj = queryString.parse(queryParams);
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     const { slug } = this.props.match.params;
-    this.state.slug = slug;
-    this.state.page = queryParamsObj.page || 0;
-    this.props.onFetchPageDetail(slug);
+    this.props.onFetchPageDetail(slug || '');
     this.checkAndLoadContent();
   }
   componentWillReceiveProps(nextProps) {
     let paramschange = false;
     if (nextProps.match.params.slug !== this.props.match.params.slug) {
       const { slug } = nextProps.match.params;
-      this.state.slug = slug;
       paramschange = true;
-      this.props.onFetchPageDetail(slug);
+      this.props.onFetchPageDetail(slug || '');
     }
     const newparams = nextProps.location.search;
     const oldparams = this.props.location.search;

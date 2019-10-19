@@ -1,6 +1,5 @@
 // Account Details Container
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import React, { Component } from 'react';
 import * as actions from '../../store/actions';
 import css from './PostDetails.css';
@@ -22,9 +21,8 @@ class PostDetails extends Component {
 
   componentDidMount() {
     const { slug, type } = this.props.match.params;
-    this.state.slug = slug || '';
-    this.state.type = type || '';
-    this.props.onFetchPdpData(type, slug);
+   
+    this.props.onFetchPdpData(type || '', slug || '');
   }
 
   render() {

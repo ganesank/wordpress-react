@@ -1,7 +1,6 @@
 // User List container
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import logger from '../../shared/logger/logger';
 import * as actions from '../../store/actions';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../shared/axiosInstanceWpress';
@@ -12,7 +11,6 @@ import ErrorAction from '../../components/UI/ErrorAction/ErrorAction';
 import PostList from '../../components/Typelist/PostList/PostList';
 import PostBgrTitle from '../../components/Post/BgrTitle/BgrTitle';
 
-let initialItemsData = [];
 class CategoryList extends Component {
   constructor(props) {
     super(props);
@@ -24,16 +22,12 @@ class CategoryList extends Component {
 
   componentDidMount() {
     const { slug, page } = this.props.match.params;
-    this.state.slug = slug || '';
-    this.state.page = page || 1;
-    this.props.onFetchPostListData(this.state.slug, this.state.page);
+    this.props.onFetchPostListData(slug || '', page || 1);
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.match.params !== this.props.match.params) {
       const { slug, page } = nextProps.match.params;
-      this.state.slug = slug;
-      this.state.page = page || 1;
-      this.props.onFetchPostListData(slug, this.state.page);
+      this.props.onFetchPostListData(slug || '', page || 1);
     }
   }
   componentWillUnmount() {
@@ -54,7 +48,7 @@ class CategoryList extends Component {
 
     if (!this.props.loading && this.props.postListResponse) {
       if (!this.state.loadOnce) {
-        initialItemsData = this.props.postListResponse.posts;
+       
         this.state.loadOnce = true;
       }
       if (this.state.slug !== 'journal') {

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-import logger from '../../shared/logger/logger';
 import * as actions from '../../store/actions';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../shared/axiosInstanceWpress';
@@ -13,12 +12,9 @@ import css from './TypeList.css';
 import ErrorAction from '../../components/UI/ErrorAction/ErrorAction';
 import PostBgrTitle from '../../components/Post/BgrTitle/BgrTitle';
 import PostList from '../../components/Typelist/PostList/PostList';
-import Pagination from '../../components/Pagination/Pagination';
-
-import * as appConstants from '../../shared/appConstants';
 
 
-let initialItemsData = [];
+
 class TypeList extends Component {
   constructor(props) {
     super(props);
@@ -30,9 +26,7 @@ class TypeList extends Component {
 
   componentDidMount() {
     const { type, slug } = this.props.match.params;
-    this.state.slug = slug || '';
-    this.state.type = type || '';
-    this.props.onFetchPostTypeList(this.state.slug, this.state.type);
+    this.props.onFetchPostTypeList(slug || '',  type || '');
   }
 
   componentWillUnmount() {
@@ -42,13 +36,7 @@ class TypeList extends Component {
 
   render() {
     let PageAllContent = null;
-
-    let PageTitle = {};
-    const lastIndex = appConstants.headerMenu.findIndex(val => val.link === this.props.history.location.pathname);
-    if (lastIndex > 0) {
-      PageTitle = appConstants.headerMenu[lastIndex].titleContent;
-    }
-
+    
 
     if (this.props.loading) {
       PageAllContent = <Spinner />;
@@ -59,7 +47,7 @@ class TypeList extends Component {
 
     if (!this.props.loading && this.props.postListResponse) {
       if (!this.state.loadOnce) {
-        initialItemsData = this.props.postListResponse.posts;
+        
         this.state.loadOnce = true;
       }
       PageAllContent = (
