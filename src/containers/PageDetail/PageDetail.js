@@ -82,8 +82,8 @@ class PageDetail extends Component {
     if (!this.props.loading && this.props.pageDetailData) {
       pageContent = (
         <Aux>
-          <PostBgrTitle titleContent={this.props.pageDetailData.page} contentType="page" />
-          <PostContent content={this.props.pageDetailData.page} contentType={this.state.slug} />
+          <PostBgrTitle titleContent={this.props.pageDetailData} contentType="page" />
+          <PostContent content={this.props.pageDetailData} contentType={this.state.slug} />
         </Aux>);
     }
     if (!this.props.loading && this.props.postListResponse) {

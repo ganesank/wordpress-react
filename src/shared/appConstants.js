@@ -29,13 +29,13 @@ export const headerMenu = [
     id: 4,
     name: 'my works',
     link: '/my-works',
-    loadContent: { postType: 'portfolio', postClass: 'col-md-6 col-sm-12 col-xs-12', showDesc: false }
+    loadContent: { postType: 'projects', postClass: 'col-md-6 col-sm-12 col-xs-12', showDesc: false }
   }, {
     id: 5,
     name: 'blog',
     link: '/journal',
     titleContent: { title: 'post', thumbnail_images: { url: '' } },
-    loadContent: { postType: 'post', postClass: 'col-md-6 col-sm-12 col-xs-12', showDesc: true }
+    loadContent: { postType: 'posts', postClass: 'col-md-6 col-sm-12 col-xs-12', showDesc: true }
   }, {
     id: 6,
     name: 'contact',

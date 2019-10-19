@@ -22,8 +22,9 @@ const fetchPageDetailDataStart = (state, action) => {
 // fetchPageDetailDataSuccess
 const fetchPageDetailDataSuccess = (state, action) => {
   logger.info('fetchPageDetailDataSuccess', action);
+  console.log(action.pageDetailData[0]);
   return updateObject(state, {
-    pageDetailData: action.pageDetailData,
+    pageDetailData: action.pageDetailData[0],
     loading: false,
   });
 };

@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import createSagaMiddleware from "redux-saga";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/css/blk-design-system-react.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import postlistReducer from "./store/reducers/postlist";
