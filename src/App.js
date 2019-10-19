@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import asyncComponent from './hoc/asyncComponent/asyncComponent';
 import Layout from "./hoc/Layout/Layout";
+import { OnRouteValidate } from './shared/utility';
+import appLogo from './assets/appLogo.svg';
+import './App.css';
 import HomePage from "./containers/HomePage/HomePage";
 import Docs from "./containers/Documentation/Documentation";
 
-import "./App.css";
+
 
 class App extends Component {
   constructor(props) {
