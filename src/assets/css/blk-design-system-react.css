@@ -15396,7 +15396,7 @@ h6,
 
 p {
   color: rgb(136, 146, 176);
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 p.description {
@@ -17467,7 +17467,7 @@ textarea.form-control:active {
 .landing-page .page-header .path {
   max-width: 65%;
   right: 0;
-  top: 30px;
+  top: -90px;
 }
 
 .landing-page .page-header .path2 {

@@ -12,7 +12,6 @@ import TypeList from "./containers/TypeList/TypeList";
 import PostDetails from "./containers/PostDetails/PostDetails";
 import PageDetail from "./containers/PageDetail/PageDetail";
 import TypeDetail from "./containers/TypeDetail/TypeDetail";
-import Docs from "./containers/Documentation/Documentation";
 
 
 
@@ -68,7 +67,6 @@ class App extends Component {
         <Route path="/list/:slug" exact component={TypeList} />
         <Route path="/list/:slug/page/:page" exact component={TypeList} /> 
         
-        <Route path="/docs" exact component={Docs} />
         <Redirect to="/" />
       </Switch>
     );

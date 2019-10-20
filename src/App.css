@@ -129,7 +129,10 @@
 .fullscreen {
   min-height: 100vh;
 }
-
+hr.line-info {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff8a00), to(#e52e71));
+  background-image: linear-gradient(to right, #ff8a00, #e52e71);
+}
 hr.thick {
   border: 0;
   width: 100%;
@@ -246,3 +249,50 @@ h2.bigTitle {
 .card.card-blog {
     min-height: 300px;
 }}
+
+.relative { position: relative;}
+
+
+.landing-page .about-section .path {
+  left: -110px;
+  max-width: 60%;
+  top: -50px;
+}
+.landing-page .service-section .path {
+  left: auto;
+  right: -250px;
+  max-width: 70%;
+  top: 0;
+}
+
+.landing-page .service-section  .path2 {
+  position: absolute;
+  opacity: .02;
+  right: auto;
+  left: 420px;
+  max-width: 10%;
+  top: 420px;
+}
+
+.landing-page .service-section  .path3 {
+  position: absolute;
+  opacity: .02;
+  left: auto;
+  right: 500px;
+  max-width: 10%;
+  top: -90px;
+}
+
+.skillsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  margin-top: 20px;
+  overflow: hidden;
+}
+.skillsContainer li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-size: 13px;
+  color: rgb(136, 146, 176);
+}
