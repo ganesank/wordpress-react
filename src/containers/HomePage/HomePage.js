@@ -75,29 +75,33 @@ class HomePage extends Component {
             <div className="container">
               <div className={`row fullscreen d-flex align-items-center justify-content-start  ${css.mh100}`}>
                 <div className="banner-content col-lg-7 col-md-12">
-                  <h1 className="text-uppercase text-blue"> SO MUCH MORE THAN PIXELS</h1>
-                  <h3 className="text-orange text-b400">m Ganesan and i design digital platforms that elevate the user experience
-                  </h3>
+                <p> Hi, my name is</p>
+                 
+                  <h1 className="bigTitle titleHighlight m-1"> Ganesan Karuppaiya.</h1>
+                  <h2 className="bigTitle m-1">I build things for the web. </h2>
                   <div>
-                    <p>the graphics and web designer by nature. self taught programmer playing with user experience.creator of clean and sharp interfaces and innovator focusing business, users and success</p>
+                    <p> I'm a UI/ UX engineer based in Chennai, IN.<br/>
+                     Specializing in building (and occasionally designing) exceptional, high-quality websites and applications with clean and sharp interfaces and innovator focusing business, users and success</p>
                   </div>
-                  <a href="as" className="primary-btn header-btn text-uppercase">EXPLORE MORE</a>
+                  <a href="as" className="btn-simple btn-round btn btn-primary"> MORE ABOUT ME </a>
+                  <a href="as" className="btn-simple btn-round btn btn-primary"> GET IN TOUCH </a>
                 </div>
               </div>
             </div>
           </section>
           <section className={`relative pb-5 ${css.infoArea} ${css.mh100}`}>
-            <div className="container-fluid">
+            <div className="container">
               <div className="row d-flex justify-content-end align-items-center">
-                <div className="col-lg-6 col-md-12 info-left no-padding pr-5">
+                <div className="col-lg-3 col-md-12 info-left no-padding pr-5">
                   <img src={serviceImage} alt="" className="img-fluid" />
                 </div>
                 <div className="col-lg-6 col-md-12 info-right no-padding">
                   <div>
+                  <h2 className="sectionTitle">About me </h2>
                     <p>A creative UX and UI designer with great business and design background who loves clean and sharp interfaces. with extreme passion and believe that great graphics in combination with a great user experience can make nearly every app or website a huge success;</p>
                     <p>I specialise in product development, interactive design, graphic design, and business development. In ultimate i see output of my work, which is always focused at the point where user, business and technical requirements meet and tends to become a perfect product.</p>
                   </div>
-                  <a href="as" className="primary-btn mt-20 text-uppercase"> MY SERVICES      <span className="lnr lnr-arrow-right" />
+                  <a href="as" className="btn-simple btn-round btn btn-primary"> MY SERVICES      <span className="lnr lnr-arrow-right" />
                   </a>
                 </div>
               </div>
@@ -166,7 +170,7 @@ class HomePage extends Component {
               <PostList
                 postData={initialItemsData}
                 row="3"
-                type="post"
+                type="posts"
                 article="post"
                 limit="3"
               />

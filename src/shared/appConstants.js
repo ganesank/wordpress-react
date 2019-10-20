@@ -5,41 +5,38 @@ export const appTitle = 'GANNY';
 export const appDescription = '';
 export const appAbout = '';
 export const appLogo = '';
-export const footerCopyRightContent = 'All rights reserved | Ganesan Karuppaiya';
+export const footerDescription = 'இதுவும் கடந்து போகும்';
+export const footerTitle = 'Although I am not currently looking for freelance opportunities, my inbox is always open to collaborate with ambitious  people;<br/>  Whether for a potential project or just to say hi, I will try my best to answer your email!.';
+export const footerCopyRightContent = 'All rights reserved <br/> Ganesan Karuppaiya';
 export const CommonBackgroundImage = appCmnBgr;
 
 export const headerMenu = [
-  {
-    id: 1,
-    name: 'home',
-    link: '/',
-    loadContent: {}
-  },
+  
   {
     id: 2,
-    name: 'about',
+    name: 'About',
     link: '/about',
     loadContent: {}
   }, {
     id: 3,
-    name: 'what i do',
+    name: 'Services',
     link: '/services',
     loadContent: { postType: 'service', postClass: 'col-md-6 col-sm-12 col-xs-12', showDesc: true }
   }, {
     id: 4,
-    name: 'my works',
+    name: 'Projects',
     link: '/my-works',
     loadContent: { postType: 'projects', postClass: 'col-md-6 col-sm-12 col-xs-12', showDesc: false }
   }, {
     id: 5,
-    name: 'blog',
+    name: 'Blog',
     link: '/journal',
     titleContent: { title: 'post', thumbnail_images: { url: '' } },
     loadContent: { postType: 'posts', postClass: 'col-md-6 col-sm-12 col-xs-12', showDesc: true }
   }, {
     id: 6,
-    name: 'contact',
-    link: '/page/contact',
+    name: 'Contact',
+    link: '/contact',
     loadContent: {}
   }
 
@@ -67,8 +64,8 @@ export const footerLinks = [
 export const connectionLinks = [
   {
     id: 1,
-    name: 'hello@ganny.in',
-    link: 'mailto:hello@ganny.in',
+    name: 'ganesank@live.com',
+    link: 'mailto:ganesank@live.com',
   },
   {
     id: 2,
@@ -77,66 +74,48 @@ export const connectionLinks = [
   }
 ];
 export const socialLinks = [
-  {
-    name: 'google',
-    id: 1,
-    title: 'Google+',
-    icon: 'fa-google-plus',
-    elink: 'https://plus.google.com/+GanesanKaruppaiya',
-  },
+  
   {
     name: 'github',
     id: 2,
-    title: 'Github',
+    title: 'ganesankar',
     icon: 'fa-github',
     elink: 'https://github.com/ganesankar',
   },
   {
     name: 'linkedIn',
     id: 3,
-    title: 'LinkedIn',
+    title: 'ganesankar',
     icon: 'fa-linkedin',
     elink: 'https://in.linkedin.com/in/ganesankar',
   },
   {
     name: 'instagram',
     id: 4,
-    title: 'Instagram',
+    title: 'ganesankar',
     icon: 'fa-instagram',
     elink: 'https://www.instagram.com/ganesankar/',
   },
   {
     name: 'twitter',
     id: 5,
-    title: 'Twitter',
+    title: 'ganesankar',
     icon: 'fa-twitter',
     elink: 'http://twitter.com/ganesankar',
   },
   {
     name: 'facebook',
     id: 6,
-    title: 'Facebook',
+    title: 'ganesankars',
     icon: 'fa-facebook',
     elink: 'http://facebook.com/ganesankars',
   },
-  {
-    name: 'medium',
-    id: 7,
-    title: 'Medium',
-    icon: 'fa-medium',
-    elink: 'https://medium.com/@ganesankar/',
-  },
-  {
-    name: 'pinterest',
-    id: 8,
-    title: 'Pinterest',
-    icon: 'fa-pinterest',
-    elink: 'https://www.pinterest.com/ganesankar/',
-  },
+  
+  
   {
     name: 'skype',
     id: 9,
-    title: 'Skype',
+    title: 'ganesan.intech',
     icon: 'fa-skype',
     elink: 'skype:ganesan.intech',
   }

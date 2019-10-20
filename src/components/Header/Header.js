@@ -1,132 +1,146 @@
 // Footer Component
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import {
+  Collapse,
+  NavbarBrand,
+  Navbar,
+  NavItem,
+  NavLink,
+  Nav,
+  Container,
+  Row,
+  Col
+} from "reactstrap";
 import { withRouter } from "react-router";
 import classnames from "classnames";
 import * as appConstants from "../../shared/appConstants";
-import css from "./Header.css";
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrolling: false,
-      headerMenuOpen: false
+      collapseOpen: false,
+      color: "navbar-transparent"
     };
-    this.handleScroll = this.handleScroll.bind(this);
-    this.toogleHeaderMenu = this.toogleHeaderMenu.bind(this);
-  }
-  componentWillMount() {
-    this.unlisten = this.props.history.listen((location, action) => {
-      console.log("on route change");
-      // OnRouteChange(location);
-      // this.state.headerMenuOpen = false;
-    });
   }
   componentDidMount() {
-    // this.state.categoryID = this.props.match.params.id;
-    window.addEventListener("scroll", this.handleScroll, { passive: true });
-  }
-  componentWillReceiveProps(nextProps) {
-    // call your api and update state with new props
+    window.addEventListener("scroll", this.changeColor);
   }
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("scroll", this.changeColor);
   }
-  handleScroll = () => {
-    /**
-     * const windowHeight =
-      "innerHeight" in window
-        ? window.innerHeight
-        : document.documentElement.offsetHeight;
-     */
-    if (window.scrollY !== 0) {
-      // scrolltop = true;
+  changeColor = () => {
+    if (
+      document.documentElement.scrollTop > 99 ||
+      document.body.scrollTop > 99
+    ) {
       this.setState({
-        scrolling: true
+        color: ""
+      });
+    } else if (
+      document.documentElement.scrollTop < 100 ||
+      document.body.scrollTop < 100
+    ) {
+      this.setState({
+        color: "navbar-transparent"
       });
     }
   };
-  toogleHeaderMenu() {
-    this.setState(prevState => ({
-      headerMenuOpen: !prevState.headerMenuOpen
-    }));
-  }
+  toggleCollapse = () => {
+    document.documentElement.classList.toggle("nav-open");
+    this.setState({
+      collapseOpen: !this.state.collapseOpen
+    });
+  };
+  onCollapseExiting = () => {
+    this.setState({
+      collapseOut: "collapsing-out"
+    });
+  };
+  onCollapseExited = () => {
+    this.setState({
+      collapseOut: ""
+    });
+  };
+  scrollToDownload = () => {
+    document
+      .getElementById("download-section")
+      .scrollIntoView({ behavior: "smooth" });
+  };
 
   render() {
     return (
       <header>
-        <div
-          className={classnames({
-            [css.header]: true,
-            [css.fixedheader]: this.state.scrolling
-          })}
+        <Navbar
+          className={"fixed-top " + this.state.color}
+          color-on-scroll="100"
+          expand="lg"
         >
-          <div className="container">
-            <div className="row align-items-center justify-content-between d-flex">
-              <div>
-                <a className={css.logo} href="/">
-                  GANNY
-                </a>
+          <Container>
+            <div className="navbar-translate">
+              <NavbarBrand
+                data-placement="bottom"
+                to="/"
+                href="/"
+                title={appConstants.appTitle}
+              >
+                <span>{appConstants.appTitle} </span>
+                
+              </NavbarBrand>
+              <button
+                aria-expanded={this.state.collapseOpen}
+                className="navbar-toggler navbar-toggler"
+                onClick={this.toggleCollapse}
+              >
+                <span className="navbar-toggler-bar bar1" />
+                <span className="navbar-toggler-bar bar2" />
+                <span className="navbar-toggler-bar bar3" />
+              </button>
+            </div>
+            <Collapse
+              className={"justify-content-end " + this.state.collapseOut}
+              navbar
+              isOpen={this.state.collapseOpen}
+              onExiting={this.onCollapseExiting}
+              onExited={this.onCollapseExited}
+            >
+              <div className="navbar-collapse-header">
+                <Row>
+                  <Col className="collapse-brand" xs="6">
+                    <a >
+                    {appConstants.appTitle}
+                    </a>
+                  </Col>
+                  <Col className="collapse-close text-right" xs="6">
+                    <button
+                      aria-expanded={this.state.collapseOpen}
+                      className="navbar-toggler"
+                      onClick={this.toggleCollapse}
+                    >
+                      <i className="tim-icons icon-simple-remove" />
+                    </button>
+                  </Col>
+                </Row>
               </div>
-              <nav>
-                <div
-                  className={classnames({
-                    [css.wrapperMenu]: true,
-                    [css.wrapperMenuOpen]: this.state.headerMenuOpen
-                  })}
-                  onClick={this.toogleHeaderMenu}
-                >
-                  <div
-                    className={`${css.lineMenu} ${css.half} ${css.start} `}
-                  />
-                  <div className={css.lineMenu} />
-                  <div className={`${css.lineMenu} ${css.half} ${css.end} `} />
-                </div>
-                {appConstants.headerMenu &&
-                appConstants.headerMenu.length > 0 ? (
-                  <div className={css.navMenu}>
-                    <ul>
-                      {appConstants.headerMenu.map((menuitem, index) => (
-                        <li key={`headerMenu${menuitem.id}`}>
-                          <NavLink
-                            to={`${process.env.PUBLIC_URL}${menuitem.link}`}
-                          >
-                            {menuitem.name}{" "}
-                          </NavLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : (
-                  <div className={css.no_items} />
-                )}
-              </nav>
-            </div>
-          </div>
-        </div>
-        <nav
-          className={classnames({
-            [css.responsiveMenu]: true,
-            [css.responsiveMenuActive]: this.state.headerMenuOpen
-          })}
-        >
-          {appConstants.headerMenu && appConstants.headerMenu.length > 0 ? (
-            <div>
-              <ul>
-                {appConstants.headerMenu.map((menuitem, index) => (
-                  <li key={`headerMenu1${menuitem.id}`}>
-                    <NavLink to={`${process.env.PUBLIC_URL}${menuitem.link}`}>
-                      {menuitem.name}{" "}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : (
-            <div className={css.no_items} />
-          )}
-        </nav>
+              {appConstants.headerMenu && appConstants.headerMenu.length > 0 ? (
+                <Nav navbar>
+                  {appConstants.headerMenu.map((menuitem, index) => (
+                    <NavItem key={`headerMenu${menuitem.id}`} className="p-0">
+                      <NavLink
+                        href={`${process.env.PUBLIC_URL}${menuitem.link}`}
+                        to={`${process.env.PUBLIC_URL}${menuitem.link}`}
+                      >
+                        {menuitem.name}{" "}
+                      </NavLink>
+                    </NavItem>
+                  ))}
+                </Nav>
+              ) : (
+                <Nav />
+              )}
+            </Collapse>
+          </Container>
+        </Navbar>
       </header>
     );
   }

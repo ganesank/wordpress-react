@@ -59,7 +59,7 @@ class App extends Component {
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/:slug" exact component={PageDetail} />
-        <Route path="/post/:slug" exact component={PostDetails} />
+        <Route path="/posts/:slug" exact component={PostDetails} />
         <Route path="/article/:type/:slug" exact component={TypeDetail} />
         <Route path="/allposts" exact component={PostListing} />
         <Route path="/allposts/page/:page" exact component={PostListing} />

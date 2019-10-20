@@ -18,7 +18,7 @@ const wpressAPIConfig = () => {
     },
     FETCH_POSTDETAIL_PAGE_DATA: {
       url:
-        'wp-json/wp/v2/posts?slug='
+        '/posts'
     },
     FETCH_POSTTYPELIST_PAGE_DATA: {
       url:

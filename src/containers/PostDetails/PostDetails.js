@@ -21,7 +21,7 @@ class PostDetails extends Component {
 
   componentDidMount() {
     const { slug, type } = this.props.match.params;
-   
+    console.log('PostDetails', slug)
     this.props.onFetchPdpData(type || '', slug || '');
   }
 
@@ -30,11 +30,13 @@ class PostDetails extends Component {
     if (this.props.loading) {
       pageContent = <Spinner />;
     }
+    console.log('postDetailPageData', this.props.postDetailPageData)
     if (!this.props.loading && this.props.postDetailPageData) {
+     
       pageContent = (
         <Aux>
-          <PostTitle content={this.props.postDetailPageData.post} />
-          <PostContent content={this.props.postDetailPageData.post} />
+          <PostTitle content={this.props.postDetailPageData[0]} />
+          <PostContent content={this.props.postDetailPageData[0]} />
         </Aux>);
     }
     return (

@@ -11,7 +11,7 @@ class Layout extends Component {
     return (
       <Aux>
         <Header />
-        <main>{this.props.children}</main>
+        <main className="fullscreen">{this.props.children}</main>
         <Footer />
       </Aux>
     );

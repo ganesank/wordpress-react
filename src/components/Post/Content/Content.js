@@ -1,20 +1,21 @@
 /* Footer Component More Options JSX  */
-import React from 'react';
+import React from "react";
 
 const Content = props => (
   <section>
     <div className="container">
       <div className="row">
-
-        <div className="col-sm-12 co-md-10 offset-md-1 col-lg-8 offset-lg-2">
-
-        {props.content && props.content.content ?
-             <div dangerouslySetInnerHTML={{ __html: props.content.content.rendered || ''}} /> :
-            <div  />
-          }
-         
+        <div className="col-sm-12 ">
+          {props.content && props.content.content ? (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: props.content.content.rendered || ""
+              }}
+            />
+          ) : (
+            <div />
+          )}
         </div>
-
       </div>
     </div>
     <div className="container" />

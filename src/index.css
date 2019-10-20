@@ -10,6 +10,7 @@ body,.rootContainer {
   position: relative;
   min-height: 100vh;
   padding-top: 50px;
+  background-color: rgb(2, 12, 27);
 }
 
 ::-moz-selection {

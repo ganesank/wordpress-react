@@ -9,7 +9,7 @@ import apiConfig from '../../config/wpressAPIConfig';
 export function* fetchPostDetailSaga(action) {
   yield put(actions.fetchPostDetailStart());
   logger.info('ufetchPostDetailSaga', action);
-  let postDetailsLink = `${apiConfig().FETCH_POSTDETAIL_PAGE_DATA.url}?$slug=${action.slug}`;
+  let postDetailsLink = `${apiConfig().FETCH_POSTDETAIL_PAGE_DATA.url}?slug=${action.slug}`;
   if (action.posttype) {
     postDetailsLink = `${apiConfig().FETCH_POSTDETAIL_PAGE_DATA.url}?post_type=${action.posttype}&slug=${action.slug}`;
   }

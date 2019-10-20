@@ -48,12 +48,12 @@ const PostList = props => (
       <div className="row">
         <div className={returnContainerClass(props.row)}>
           <div className="">
-            {props.postData.posts && props.postData.posts.length > 0 ? (
+            {props.postData && props.postData.length > 0 ? (
               <div className="container-fluid">
                 {props.limit ? (
                   <div className="row propslimit">
                     {postListItem(
-                      props.postData.posts,
+                      props.postData,
                       props.limit,
                       props.row,
                       props.article,
@@ -63,8 +63,8 @@ const PostList = props => (
                 ) : (
                   <div className="row propsnolimit">
                     {postListItem(
-                      props.postData.posts,
-                      props.postData.posts.length,
+                      props.postData,
+                      props.postData.length,
                       props.row,
                       props.article,
                       props.type
